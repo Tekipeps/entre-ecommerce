@@ -20,6 +20,9 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
+app.get("", (_, res) => {
+  res.send("Ecommerce API");
+});
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
