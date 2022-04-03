@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(
   morgan(":method :url :status :response-time ms - :res[content-length]")
 );
-app.use(express.static(path.join(__dirname, "admin")));
+// app.use(express.static(path.join(__dirname, "admin")));
 app.use(express.static(path.join(__dirname, "client")));
 
 app.use("/api/auth", authRoute);
@@ -35,9 +35,9 @@ app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/checkout", stripeRoute);
 
-app.use("/admin*", function (req, res) {
-  res.sendFile(path.join(__dirname, "admin", "index.html"));
-});
+// app.use("/admin/*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "admin", "index.html"));
+// });
 
 app.use("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "client", "index.html"));
