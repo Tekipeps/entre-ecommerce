@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "./build-ui.sh"
+    "build": "cd client && yarn build && mv build ../api/client && cd ../admin  && yarn build && mv build ../api/admin"
   }
 }
