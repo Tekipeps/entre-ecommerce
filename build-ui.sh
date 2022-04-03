@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../client
+cd client
 yarn build
 cd ../admin
 yarn build
