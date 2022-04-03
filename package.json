@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "./build.sh"
+    "build": "./build-ui.sh"
   },
   "volta": {
     "node": "16.14.2"
