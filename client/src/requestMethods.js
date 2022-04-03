@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/";
+export const BASE_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:9000/api/"
+    : "/api/";
 // const TOKEN =
 //   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
 //     .accessToken || "";

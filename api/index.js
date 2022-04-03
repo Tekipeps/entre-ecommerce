@@ -11,6 +11,7 @@ const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 const path = require("path");
+const morgan = require("morgan");
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -21,6 +22,9 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
+app.use(
+  morgan(":method :url :status :response-time ms - :res[content-length]")
+);
 app.use(express.static(path.join(__dirname, "admin")));
 app.use(express.static(path.join(__dirname, "client")));
 
