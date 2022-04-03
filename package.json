@@ -1,5 +1,8 @@
 {
   "scripts": {
     "build": "cd client && yarn build && mv build ../api/client && cd ../admin  && yarn build && mv build ../api/admin"
+  },
+  "volta": {
+    "node": "16.14.2"
   }
 }
